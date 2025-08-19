@@ -1,0 +1,472 @@
+/* Reset e Estilos Básicos */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0e014c;
+    color: #333;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 20px;
+    background: #0074D9;
+    color: #fff;
+    width: 100%;
+    position: relative;
+    z-index: 10; /* Garante que o header fica acima do carrossel */
+    margin-bottom: 20px; /* Dá espaço para o dropdown */
+}
+
+header .logo h1 {
+    font-size: 24px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 12px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    background: #0e014c;
+    padding: 10px;
+    list-style: none;
+    border-radius: 35px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    top: 100%; /* Garante que o dropdown aparece logo abaixo do item do menu */
+}
+
+.dropdown li a {
+    display: flex; /* Alinha itens em linha */
+    align-items: center; /* Centraliza verticalmente o texto e a imagem */
+    color: #fff;
+    padding: 8px 12px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.dropdown li a img.social-icon {
+    width: 24px; /* Largura da imagem */
+    height: 24px; /* Altura da imagem */
+    margin-right: 10px; /* Espaço entre a imagem e o texto */
+}
+
+.dropdown li a:hover {
+    background: #0074D9;
+    border-radius: 5px;
+}
+
+nav ul li:hover .dropdown {
+    display: block;
+}
+
+/* Carrossel */
+.carrossel {
+    filter: drop-shadow(0px 0px 10px #000);
+    overflow: hidden;
+    width: 100%;
+    max-width: 1200px;
+    height: 450px;
+    margin: 20px auto;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1; /* Coloca o carrossel atrás do header */
+}
+
+.container {
+    display: flex;
+    transition: transform 0.7s ease-in-out;
+}
+
+.container img {
+    width: 1200px;
+    height: 450px;
+    object-fit: cover;
+}
+
+/* Indicadores de ponto do carrossel */
+.dots-container {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #fff;
+}
+
+/* Botões de navegação */
+#prev, #next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 2;
+    transition: background-color 0.3s;
+}
+
+#prev:hover, #next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#prev {
+    left: 10px;
+}
+
+#next {
+    right: 10px;
+}
+
+/* Destaques */
+.highlights {
+    padding: 20px;
+    background: #0e014c;
+    text-align: center;
+}
+
+.highlights h2 {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.product-card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+/* Ajuste para o título dos produtos */
+.product-card h3 {
+    font-size: 16px; /* Tamanho do texto */
+    white-space: nowrap; /* Impede quebra de linha */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adiciona "..." se o texto for muito longo */
+    margin-top: 10px;
+    color: #333;
+}
+
+/* Estilização do botão "Comprar Agora" */
+.buy-button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #ffffff;
+    background-color: #007bff; /* Azul para destaque */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.buy-button:hover {
+    background-color: #0056b3; /* Azul mais escuro para hover */
+    transform: scale(1.05); /* Leve aumento ao passar o mouse */
+}
+
+.buy-button:active {
+    background-color: #004494; /* Azul ainda mais escuro para clique */
+    transform: scale(0.98); /* Leve redução para efeito de clique */
+}
+
+/* Benefícios */
+.benefits {
+    padding: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.benefits h2 {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+/* Botões Interativos */
+.interactive-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.toggle-button {
+    padding: 10px 20px;
+    background-color: #0074D9;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toggle-button:hover {
+    background-color: #0056b3;
+}
+
+.hidden-text {
+    display: none;
+    margin-top: 10px;
+    background: #e0f7fa;
+    padding: 10px;
+    border-radius: 5px;
+    color: #0074D9;
+    font-size: 14px;
+}
+
+/* Rodapé */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap');
+
+:root {
+    --color-neutral-0: #0e014c;
+    --color-neutral-10: #0074D9;
+    --color-neutral-30: #b7dcfc;
+    --color-neutral-40: #fff;
+
+}
+
+* {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+}
+
+main {
+    height: 80vh;
+}
+
+footer {
+    width: 100%;
+    color: var(--color-neutral-40);
+}
+
+.footer-link {
+    text-decoration: none;
+}
+
+#footer_content {
+    background-color: var(--color-neutral-10);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 3rem 3.5rem;
+}
+
+#footer_contacts h1 {
+    margin-bottom: 0.75rem;
+}
+
+#footer_social_media {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+} 
+
+#footer_social_media .footer-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    color: var(--color-neutral-40);
+    border-radius: 50%;
+    transition: all 0.4s;
+}
+
+#footer_social_media .footer-link i {
+    font-size: 1.25rem;    
+}
+
+#footer_social_media .footer-link:hover {
+    opacity: 0.8;
+}
+
+#instagram {
+    background: linear-gradient(#7f37c9, #ff2992, #ff9807);
+}
+
+#facebook {
+    background-color: #4267b3;
+}
+
+#whatsapp {
+    background-color: #25d366;
+}
+
+.footer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    list-style: none;
+}
+
+.footer-list .footer-link {
+    color: var(--color-neutral-30);
+    transition: all 0.4s;
+}
+
+.footer-list .footer-link:hover {
+    color: #0e014c;
+}
+
+#footer_subscribe {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#footer_subscribe p {
+    color: var(--color-neutral-30);
+}
+
+#input_group {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-neutral-0);
+    border-radius: 4px;
+}
+
+#input_group input {
+    all: unset;
+    padding: 0.75rem;
+    width: 100%;
+}
+
+#input_group button {
+    background-color: #9dd1fe;
+    border: none;
+    color: var(--color-neutral-40);
+    padding: 0px 1.25rem;
+    font-size: 1.125rem;
+    height: 100%;
+    border-radius: 0px 4px 4px 0px;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+#input_group button:hover {
+    opacity: 0.8;
+}
+
+#footer_copyright {
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-neutral-0);
+    font-size: 0.9rem;
+    padding: 1.5rem;
+    font-weight: 100;
+}
+
+@media screen and (max-width: 768px) {
+    #footer_content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    #footer_content {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 3rem 2rem;
+    }
+}
+
+/* Botões Interativos */
+.interactive-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.button-group {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+}
+
+.toggle-button {
+    padding: 10px 20px;
+    background-color: #0074D9;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%; /* Botão ocupa toda a largura do container */
+}
+
+.toggle-button:hover {
+    background-color: #0056b3;
+}
+
+.hidden-text {
+    display: none;
+    margin-top: 10px;
+    background: #e0f7fa;
+    padding: 10px;
+    border-radius: 5px;
+    color: #0074D9;
+    font-size: 14px;
+    text-align: justify;
+    width: 100%; /* Texto ocupa a mesma largura do botão */
+}

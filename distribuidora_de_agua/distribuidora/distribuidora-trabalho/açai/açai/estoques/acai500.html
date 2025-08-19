@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venda de Água Mineral</title>
+    <link rel="stylesheet" href="./acai500.css">
+    <link rel="icon" type="image/png" href="./img-logo/bmdo-mineralgg.png">
+</head>
+<body>
+    <div class="product-container">
+        <div class="product-image">
+            <img src="./imagens-dos-produtos/155992-800-auto.png" alt="Açai Natural">
+        </div>
+        <div class="product-info">
+            <div class="product-title">Garrafa de água mineral 500ml</div>
+            <div class="product-description">Açai natural, pura e refrescante.</div>
+            <div class="product-price">R$ 13,50</div>
+            
+            <!-- Seção de quantidade -->
+            <div class="quantity-container">
+                <label for="quantity">Quantidade:</label>
+                <button onclick="decreaseQuantity()">-</button>
+                <input type="number" id="quantity" value="1" min="1" max="100" 
+                       title="Digite a quantidade desejada" placeholder="1" oninput="updatePrice()">
+                <button onclick="increaseQuantity()">+</button>
+            </div>
+
+            <!-- Preço Total -->
+            <div class="total-price">
+                <strong>Preço Total: </strong> R$ <span id="total-price">2.50</span>
+            </div>
+        </div>
+        
+        <div class="payment-options">
+            <button class="payment-button pix">Pagar com PIX</button> 
+            <button class="payment-button card">Pagar com Cartão</button>
+        </div>
+        
+        <a href="/index.html">Voltar para a página inicial</a>
+    </div>
+    
+
+    <script src="/estoques/garrafa500.js"></script>
+</body>
+</html>
